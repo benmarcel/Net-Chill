@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link href="/src/style.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Net&Chill</title>
+</head>
+<body>
+    <main>
+        <!-- video section -->
+      <section
+        id="video-section"
+        class="flex-col items-center justify-center h-full"
+      >
+        <h2 class="text-white text-2xl mb-4">Watching Together</h2>
+
+        <div id="video-player" class="w-full max-w-4xl aspect-video">
+          <!-- Video player will be embedded here -->
+        </div>
+        <input
+          type="text"
+          id="video-url-link"
+          placeholder="YouTube URL"
+          class="hidden"
+          readonly
+        />
+        <button type="button" id="share-link-btn" class="">Share Link</button>
+
+        <ul class="user-list">
+          <!-- user list items will be dynamically generated -->
+        </ul>
+        <!-- chat section -->
+        <div class="chat-section">
+          <h3 class="text-white text-xl mb-2">Chat</h3>
+          <div
+            id="chat-messages"
+            class="mb-4 p-4 bg-gray-800 rounded-lg h-64 overflow-y-auto"
+          >
+            <!-- chat messages will be dynamically generated -->
+          </div>
+          <input
+            type="text"
+            id="chat-input"
+            class="w-full p-2 rounded-lg border border-gray-300"
+            placeholder="Type your message..."
+          />
+
+          <button type="button" id="send-btn">Send</button>
+          <button type="button" id="join-voice-chat-btn">
+            Join Voice Chat
+          </button>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
