@@ -5,12 +5,12 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link href="/src/style.css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>frontend</title>
+    <title>Net&Chill</title>
   </head>
-  <body>
+  <body class="bg-black text-white font-sans">
     <div
       id="landing-page-container"
-      class="relative h-screen w-full overflow-hidden bg-black text-white font-sans"
+      class="relative min-h-screen w-full overflow-x-hidden bg-black text-white"
     >
       <div class="absolute inset-0 z-0">
         <img
@@ -18,214 +18,118 @@
           class="h-full w-full object-cover opacity-60"
           alt="bg"
         />
-        <div
-          class="absolute inset-0 bg-linear-to-r from-black via-transparent to-black/20"
-        ></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-black via-black/40 to-black/20"></div>
       </div>
-      <header
-        class="relative z-10 flex items-center justify-between px-12 py-8"
-      >
+
+      <header class="relative z-10 flex items-center justify-between px-6 md:px-12 py-8">
         <div class="flex items-center gap-12">
-          <h1 class="text-3xl font-black tracking-tighter italic">NET&CHILL</h1>
-          <nav
-            class="hidden md:flex gap-8 text-xs font-bold uppercase tracking-widest text-gray-300"
-          >
+          <h1 class="text-2xl md:text-3xl font-black tracking-tighter italic">NET&CHILL</h1>
+          <nav class="hidden md:flex gap-8 text-xs font-bold uppercase tracking-widest text-gray-300">
             <a href="#" class="hover:text-white">Rooms</a>
             <a href="#" class="hover:text-white">Trending</a>
             <a href="#" class="hover:text-white">Friends</a>
           </nav>
         </div>
       </header>
-      <!-- landing page -->
+
       <section
         id="landing-page"
-        class="relative h-full z-10 px-12 flex flex-col justify-center md:flex-row md:justify-start gap-16 md:items-center"
+        class="relative z-10 px-6 md:px-12 pb-20 flex flex-col md:flex-row gap-12 md:gap-16 items-center"
       >
-        <div
-          class="absolute left-4 top-1/2 max-sm:top-1/2 -rotate-90 origin-left text-[10px] uppercase tracking-[0.3em] text-gray-400 border-l border-gray-500 pl-4"
-        >
+        <div class="hidden sm:block absolute left-4 top-1/2 -rotate-90 origin-left text-[10px] uppercase tracking-[0.3em] text-gray-400 border-l border-gray-500 pl-4">
           Chill with friends, no matter the distance.
         </div>
 
-        <div
-          class="flex-1 w-full max-w-xl flex flex-col justify-center items-center md:items-start text-center md:text-left p-5"
-        >
-          <h2
-            class="text-5xl md:text-7xl font-extrabold leading-[0.9] mb-2 tracking-tighter h-full w-full"
-          >
-            Watch <br class="hidden md:block" />
-            Together.
+        <div class="w-full max-w-xl flex flex-col justify-center items-center md:items-start text-center md:text-left mt-10 md:mt-0">
+          <h2 class="text-5xl md:text-7xl font-extrabold leading-[0.9] mb-4 tracking-tighter">
+            Watch <br class="hidden md:block" /> Together.
           </h2>
 
-          <p
-            class="text-base md:text-lg text-gray-300 mb-8 max-w-xs md:max-w-sm mx-auto md:mx-0"
-          >
-            Enjoy movies together with friends regardless of distance. Enter a
-            URL to start a private room.
+          <p class="text-base md:text-lg text-gray-300 mb-8 max-w-xs md:max-w-sm">
+            Enjoy movies together with friends regardless of distance. Enter a URL to start a private room.
           </p>
 
-          <div class="flex flex-col gap-4 w-full max-w-[320px] md:max-w-xs">
-            <input
-              type="text"
-              id="video-url-input"
-              placeholder="YouTube URL"
-              class="bg-white/10 border border-white/20 p-4 md:p-3 outline-none focus:bg-white/20 transition backdrop-blur-md rounded-sm"
-            />
-            <input
-              type="text"
-              id="username-input"
-              placeholder="Username"
-              class="bg-white/10 border border-white/20 p-4 md:p-3 outline-none focus:bg-white/20 transition backdrop-blur-md rounded-sm"
-            />
+          <div class="flex flex-col gap-4 w-full max-w-[320px]">
+            <input type="text" id="video-url-input" placeholder="YouTube URL" class="bg-white/10 border border-white/20 p-4 outline-none focus:bg-white/20 transition backdrop-blur-md rounded-sm" />
+            <input type="text" id="username-input" placeholder="Username" class="bg-white/10 border border-white/20 p-4 outline-none focus:bg-white/20 transition backdrop-blur-md rounded-sm" />
 
-            <button
-              id="create-room-btn"
-              class="group flex items-center justify-center md:justify-start gap-4 mt-4 text-cyan-400 font-bold uppercase tracking-widest text-xs md:text-sm"
-            >
+            <button id="create-room-btn" class="group flex items-center justify-center md:justify-start gap-4 mt-4 text-cyan-400 font-bold uppercase tracking-widest text-xs md:text-sm">
               <span>Create Video Room</span>
-              <div
-                class="w-10 h-10 md:w-8 md:h-8 rounded-full border border-cyan-400 flex items-center justify-center group-hover:bg-cyan-400 group-hover:text-black transition"
-              >
-                ▶
-              </div>
+              <div class="w-10 h-10 rounded-full border border-cyan-400 flex items-center justify-center group-hover:bg-cyan-400 group-hover:text-black transition">▶</div>
             </button>
           </div>
         </div>
 
-        <!-- how it works -->
-        <div
-          class="how-it-works md:flex flex-col gap-6 border-l border-white/10 pl-8"
-        >
-          <h3
-            class="text-xs font-bold uppercase tracking-[0.4em] text-cyan-400 mb-2 animate-in fade-in slide-in-from-left-4 duration-700"
-          >
-            How It Works
-          </h3>
-
-          <div
-            class="group delay-100 animate-in fade-in slide-in-from-bottom-2 duration-1000 fill-mode-both"
-          >
-            <span
-              class="text-4xl font-black text-white/10 group-hover:text-cyan-400/20 transition-colors"
-              >01</span
-            >
-            <p class="text-sm text-gray-300 -mt-4 relative z-10">
-              Enter a YouTube URL and your username to create a private room.
-            </p>
+        <div class="how-it-works flex flex-col gap-8 border-l border-white/10 pl-8 md:max-w-xs">
+          <h3 class="text-xs font-bold uppercase tracking-[0.4em] text-cyan-400 mb-2">How It Works</h3>
+          <div class="group">
+            <span class="text-4xl font-black text-white/10 group-hover:text-cyan-400/20 transition-colors">01</span>
+            <p class="text-sm text-gray-300 -mt-2">Enter a YouTube URL and your username to create a private room.</p>
           </div>
-
-          <div
-            class="group delay-300 animate-in fade-in slide-in-from-bottom-2 duration-1000 fill-mode-both"
-          >
-            <span
-              class="text-4xl font-black text-white/10 group-hover:text-cyan-400/20 transition-colors"
-              >02</span
-            >
-            <p class="text-sm text-gray-300 -mt-4 relative z-10">
-              Share the generated room link with your friends.
-            </p>
+          <div class="group">
+            <span class="text-4xl font-black text-white/10 group-hover:text-cyan-400/20 transition-colors">02</span>
+            <p class="text-sm text-gray-300 -mt-2">Share the generated room link with your friends.</p>
           </div>
-
-          <div
-            class="group delay-500 animate-in fade-in slide-in-from-bottom-2 duration-1000 fill-mode-both"
-          >
-            <span
-              class="text-4xl font-black text-white/10 group-hover:text-cyan-400/20 transition-colors"
-              >03</span
-            >
-            <p class="text-sm text-gray-300 -mt-4 relative z-10">
-              Watch the video together in sync and chat in real-time.
-            </p>
+          <div class="group">
+            <span class="text-4xl font-black text-white/10 group-hover:text-cyan-400/20 transition-colors">03</span>
+            <p class="text-sm text-gray-300 -mt-2">Watch in sync and chat in real-time.</p>
           </div>
         </div>
       </section>
     </div>
-    <div class="player-container">
-      <!-- video section -->
-      <section
-        id="video-section"
-        class="hidden h-screen w-full bg-[#0f0f0f] text-white flex-col"
+
+    <section id="video-section" class="hidden min-h-screen w-full bg-[#0f0f0f] flex flex-col">
+      <div id="player-header" class="flex items-center justify-between px-4 md:px-6 py-3 bg-[#1a1a1a] border-b border-white/10">
+        <h1 class="font-black italic tracking-tighter text-sm md:text-base">NET&CHILL</h1>
+        <button id="copy-link-btn" class="text-[10px] md:text-xs border border-white/20 px-3 py-1 rounded hover:bg-white/10">
+          Copy Link
+        </button>
+      </div>
+
+      <div class="flex flex-col md:flex-row flex-1 overflow-hidden">
+        <div class="flex-1 bg-black aspect-video md:aspect-auto">
+          <div id="video-player" class="h-full w-full"></div>
+        </div>
+
+        <div id="sidebar" class="w-full md:w-80 flex flex-col bg-[#1a1a1a] border-t md:border-t-0 md:border-l border-white/10 h-[450px] md:h-auto">
+  <div class="p-4 border-b border-white/10 flex-shrink-0">
+    <h3 class="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-2">
+      Watching
+    </h3>
+    <ul id="user-list" class="flex flex-row md:flex-col gap-2 overflow-x-auto md:overflow-x-visible">
+      </ul>
+  </div>
+
+  <div id="chat-messages" class="flex-1 overflow-y-auto p-4 flex flex-col gap-2 text-sm">
+    </div>
+
+  <div class="p-4 border-t border-white/10 bg-[#1a1a1a] flex flex-col gap-3">
+    <button
+      id="join-voice-chat-btn"
+      class="w-full border border-white/20 rounded py-2 text-xs md:text-sm hover:bg-white/10 transition flex items-center justify-center gap-2"
+    >
+      🎤 Join Voice
+    </button>
+    
+    <div class="flex gap-2">
+      <input
+        type="text"
+        id="chat-input"
+        placeholder="Type a message..."
+        class="flex-1 bg-white/10 border border-white/20 rounded px-3 py-2 text-sm outline-none focus:bg-white/20"
+      />
+      <button
+        id="send-btn"
+        class="bg-cyan-400 text-black px-3 py-2 rounded text-sm font-bold hover:bg-cyan-300 transition"
       >
-        <!-- minimal top bar -->
-        <div
-          id="player-header"
-          class="flex items-center justify-between px-6 py-3 bg-[#1a1a1a] border-b border-white/10"
-        >
-          <h1 class="font-black italic tracking-tighter">NET&CHILL</h1>
-          <div class="flex items-center gap-3">
-            <input
-              type="text"
-              class="hidden"
-              id="shareable-link-input"
-              readonly
-            />
-            <button
-              id="copy-link-btn"
-              class="text-xs border border-white/20 px-3 py-1 rounded hover:bg-white/10"
-            >
-              Copy Room Link
-            </button>
-          </div>
-        </div>
-
-        <!-- main content area -->
-        <div class="flex flex-1 overflow-hidden">
-          <!-- LEFT: Video Player -->
-          <div class="flex-1 flex flex-col bg-black">
-           <div id="video-player" class="flex-1 min-h-12.5 w-full visible border-2" ></div>
-          </div>
-
-          <!-- RIGHT: Sidebar -->
-          <div class="w-80 flex flex-col bg-[#1a1a1a] border-l border-white/10">
-            <!-- Users watching -->
-            <div class="p-4 border-b border-white/10">
-              <h3
-                class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-3"
-              >
-                Watching
-              </h3>
-              <ul id="user-list" class="flex flex-col gap-2">
-                <!-- users added dynamically -->
-              </ul>
-            </div>
-
-            <!-- Chat messages -->
-            <div
-              id="chat-messages"
-              class="flex-1 overflow-y-auto p-4 flex flex-col gap-2"
-            >
-              <!-- messages added dynamically -->
-            </div>
-
-            <!-- Chat input -->
-            <div class="p-4 border-t border-white/10 flex flex-col gap-2">
-              <div class="flex gap-2">
-                <input
-                  type="text"
-                  id="chat-input"
-                  placeholder="Type a message..."
-                  class="flex-1 bg-white/10 border border-white/20 rounded px-3 py-2 text-sm outline-none focus:bg-white/20"
-                />
-                <button
-                  id="send-btn"
-                  class="bg-cyan-400 text-black px-3 py-2 rounded text-sm font-bold hover:bg-cyan-300"
-                >
-                  Send
-                </button>
-              </div>
-              <button
-                id="join-voice-chat-btn"
-                class="w-full border border-white/20 rounded py-2 text-sm hover:bg-white/10"
-              >
-                🎤 Join Voice
-              </button>
-            </div>
-          </div>
-          <!-- END RIGHT Sidebar -->
-        </div>
-        <!-- END main content -->
-      </section>
+        Send
+      </button>
     </div>
+  </div>
+</div>
+      </div>
+    </section>
+
     <script src="https://www.youtube.com/iframe_api"></script>
     <script type="module" src="/src/main.ts"></script>
   </body>
