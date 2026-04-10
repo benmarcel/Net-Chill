@@ -11,7 +11,7 @@ const io = new Server(httpServer, {
   cors: {
     origin: [
       "http://localhost:5173",
-      "https://net-and-chill.netlify.app",
+      "https://cowatch-jet.vercel.app",
       "https://fattenable-hadlee-unpossessable.ngrok-free.dev",
     ],
     methods: ["GET", "POST"],

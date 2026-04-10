@@ -269,7 +269,7 @@ const handleGuestSubmit = (sharedRoomId: string) => {
 
 const createVideoRoom = async (videoUrl: string) => {
   try {
-    const response = await fetch("http://localhost:3000/api/rooms/create", {
+    const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/rooms/create`, {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({ videoUrl }),
