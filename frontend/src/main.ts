@@ -33,9 +33,7 @@ const videoSection = document.getElementById("video-section") as HTMLElement;
 const landingPage = document.getElementById(
   "landing-page-container",
 ) as HTMLElement;
-const shareableLinkInput = document.getElementById(
-  "shareable-link-input",
-) as HTMLInputElement;
+
 const copyLinkBtn = document.getElementById(
   "copy-link-btn"
 ) as HTMLButtonElement;
@@ -135,7 +133,7 @@ const voiceSignalingCallbacks = {
 };
 
 let currentRoomId: string | null = null;
-
+let shareableLink: string | null = null;
 const boot = () => {
   const urlParams = new URLSearchParams(window.location.search);
   const sharedRoomId = urlParams.get("room");
@@ -171,8 +169,8 @@ const boot = () => {
 });
 
   copyLinkBtn?.addEventListener("click", () => {
-    if (shareableLinkInput?.value) {
-      navigator.clipboard.writeText(shareableLinkInput.value).then(() => {
+    if (shareableLink) {
+      navigator.clipboard.writeText(shareableLink).then(() => {
         const originalText = copyLinkBtn.innerHTML;
         copyLinkBtn.innerText = "COPIED!";
         setTimeout(() => {
@@ -194,8 +192,8 @@ const boot = () => {
   // Refresh path — user was already in a room
   if (savedSession) {
     const parsed = JSON.parse(savedSession);
-    if (shareableLinkInput) {
-      shareableLinkInput.value = `${window.location.origin}?room=${parsed.roomId}`;
+    if (shareableLink) {
+      shareableLink = `${window.location.origin}?room=${parsed.roomId}`;
     }
     connectToRoom(
       parsed.roomId,
@@ -246,7 +244,7 @@ const handleHostSubmit = async () => {
     const newUrl = `${window.location.origin}?room=${currentRoomId}`;
     window.history.pushState({ path: newUrl }, "", newUrl);
 
-    if (shareableLinkInput) shareableLinkInput.value = newUrl;
+    shareableLink = newUrl;
 
     connectToRoom(currentRoomId, username, buildCallbacks(currentRoomId));
   }
@@ -260,8 +258,8 @@ const handleGuestSubmit = (sharedRoomId: string) => {
     return;
   }
 
-  if (shareableLinkInput) {
-    shareableLinkInput.value = `${window.location.origin}?room=${sharedRoomId}`;
+  if (shareableLink) {
+    shareableLink = `${window.location.origin}?room=${sharedRoomId}`;
   }
 
   connectToRoom(sharedRoomId, username, buildCallbacks(currentRoomId));
