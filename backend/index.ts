@@ -4,9 +4,9 @@ import { createServer } from "http";
 const app = express();
 const httpServer = createServer(app);
 import { Server } from "socket.io";
-import { initSocket } from "./socket/index.ts";
+import { initSocket } from "./socket/index.js";
 import cors from "cors";
-import roomRoutes from "./routes/room.routes.ts";
+import roomRoutes from "./routes/room.routes.js";
 const io = new Server(httpServer, {
   cors: {
     origin: [
