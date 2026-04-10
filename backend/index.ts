@@ -12,7 +12,7 @@ const io = new Server(httpServer, {
     origin: [
       "http://localhost:5173",
       "https://cowatch-jet.vercel.app",
-      "https://fattenable-hadlee-unpossessable.ngrok-free.dev",
+      "https://net-chill.onrender.com",
     ],
     methods: ["GET", "POST"],
   },
