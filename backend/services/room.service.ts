@@ -1,4 +1,4 @@
-import { rooms, type RoomState, type User } from "../store/room.store.ts";
+import { rooms, type RoomState, type User } from "../store/room.store.js";
 import { v4 as uuidv4 } from "uuid";
 
 // Create a new room

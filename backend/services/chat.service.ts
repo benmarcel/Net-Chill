@@ -1,4 +1,4 @@
-import { type message, chatMessages } from "../store/chat.store.ts";
+import { type message, chatMessages } from "../store/chat.store.js";
 
 export const addChatMessage = (userId: string, message: message) => {
   if (!chatMessages.has(userId)) {

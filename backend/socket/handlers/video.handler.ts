@@ -1,6 +1,6 @@
 // play/pause/seek events
 import { Socket, Server } from "socket.io";
-import { roomService } from "../../services/room.service.ts";
+import { roomService } from "../../services/room.service.js";
 
 export function registerVideoHandlers(io: Server, socket: Socket) {
   socket.on("video:play", ({ roomId, currentTime }) => {

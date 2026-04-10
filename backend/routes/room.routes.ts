@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { roomService } from "../services/room.service.ts";
+import { roomService } from "../services/room.service.js";
 const router = Router();
 import type { Request, Response } from "express";
 

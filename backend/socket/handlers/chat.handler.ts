@@ -2,8 +2,8 @@
 
 // server/socket/handlers/chat.handler.ts
 import { Server, Socket } from 'socket.io';
-import { roomService } from '../../services/room.service.ts';
-import { addChatMessage} from '../../services/chat.service.ts';
+import { roomService } from '../../services/room.service.js';
+import { addChatMessage} from '../../services/chat.service.js';
 export function registerChatHandlers(io: Server, socket: Socket) {
 
   socket.on('chat:message', ({ roomId, message }) => {

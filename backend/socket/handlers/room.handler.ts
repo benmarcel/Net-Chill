@@ -1,7 +1,7 @@
 // join/leave room events
 import { Socket, Server } from "socket.io";
-import { roomService } from "../../services/room.service.ts";
-import { getChatMessages } from "../../services/chat.service.ts";
+import { roomService } from "../../services/room.service.js";
+import { getChatMessages } from "../../services/chat.service.js";
 // import { rooms } from "../../store/room.store";
 
 export function registerRoomHandlers(io: Server, socket: Socket) {

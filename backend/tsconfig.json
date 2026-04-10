@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    /* Base Options */
+    "target": "ES2022",                  /* Modern JavaScript support */
+    "module": "NodeNext",                /* Required for modern Node.js ESM */
+    "moduleResolution": "NodeNext",      /* Helps find your files/packages correctly */
+    "rootDir": "./",                  /* Where your .ts files live */
+    "outDir": "./dist",                  /* Where your compiled .js files go */
+    
+    /* Strictness */
+    "strict": true,                      /* Best for "Relevant Backend Engineers" */
+    "noImplicitAny": true,               /* Prevents lazy typing */
+    "skipLibCheck": true,                /* Speeds up builds by skipping package types */
+    
+    /* Compatibility */
+    "esModuleInterop": true,             /* Allows importing CommonJS (like Express) easily */
+    "resolveJsonModule": true,           /* Allows you to import .json files */
+    "sourceMap": true,                   /* Great for debugging in VS Code */
+    
+    /* Fix for your previous error */
+    "allowImportingTsExtensions": false,  /* Set to false to force standard clean imports */
+  },
+//   "include": ["src/**/*"],               /* Includes all files in src */
+  "exclude": ["node_modules", "**/*.spec.ts"] /* Keeps the junk out of the build */
+}
