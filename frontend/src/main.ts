@@ -37,7 +37,7 @@ const shareableLinkInput = document.getElementById(
   "shareable-link-input",
 ) as HTMLInputElement;
 const copyLinkBtn = document.getElementById(
-  "copy-link-btn",
+  "copy-link-btn"
 ) as HTMLButtonElement;
 
 const chatDisplay = document.getElementById("chat-messages") as HTMLElement;
