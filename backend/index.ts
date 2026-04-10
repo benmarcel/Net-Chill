@@ -22,8 +22,8 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://net-and-chill.netlify.app",
-      "https://fattenable-hadlee-unpossessable.ngrok-free.dev",
+      "https://cowatch-jet.vercel.app",
+      "https://net-chill.onrender.com",
     ],
     methods: ["GET", "POST"],
   }),
