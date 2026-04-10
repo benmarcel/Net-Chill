@@ -162,11 +162,11 @@ const boot = () => {
     const existingUserIds = getRoomUserIds();
     await joinVoice(existingUserIds, voiceSignalingCallbacks);
     inVoice = true;
-    joinVoiceBtn.innerText = "🔴 Leave Voice";
+    joinVoiceBtn.innerText = "Leave Voice Chat";
   } else {
     leaveVoice();
     inVoice = false;
-    joinVoiceBtn.innerText = "🎤 Join Voice";
+    joinVoiceBtn.innerText = "Join Voice Chat";
   }
 });
 
